@@ -1,4 +1,4 @@
 function mostrarMensagem() {
-  const nome = document.getElementById("nome").innerText;
+  const nome = document.getElementById("patrick").innerText;
   alert("Olá, " + patrick + "!");
 }
