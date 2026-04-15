@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronômetro com Voltas</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora IMC</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Cronômetro</h1>
-        <div id="display">00:00:00</div>
+<div class="container">
+<h1>Calculadora de IMC</h1>
 
-        <div class="botoes">
-            <button onclick="iniciar()">Iniciar</button>
-            <button onclick="pausar()">Pausar</button>
-            <button onclick="resetar()">Reset</button>
-            <button onclick="volta()">Volta</button>
-        </div>
+<input type="number" id="peso" placeholder="Peso (kg)">
+<input type="number" id="altura" placeholder="Altura (m)">
 
-        <ul id="voltas"></ul>
-    </div>
+<button onclick="calcular()">Calcular</button>
 
-    <script src="script.js"></script>
+<p id="resultado"></p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

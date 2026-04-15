@@ -1,42 +1,22 @@
-let tempo = 0;
-let intervalo = null;
+function calcular(){
+let peso = parseFloat(document.getElementById("peso").value);
+let altura = parseFloat(document.getElementById("altura").value);
 
-function formatarTempo(segundos) {
-    const hrs = String(Math.floor(segundos / 3600)).padStart(2, '0');
-    const mins = String(Math.floor((segundos % 3600) / 60)).padStart(2, '0');
-    const secs = String(segundos % 60).padStart(2, '0');
-    return `${hrs}:${mins}:${secs}`;
-}
+if(!peso || !altura) return;
 
-function atualizarDisplay() {
-    document.getElementById("display").innerText = formatarTempo(tempo);
-}
+let imc = peso / (altura * altura);
+let classificacao = "";
 
-function iniciar() {
-    if (intervalo !== null) return; // evita múltiplos intervals
+if(imc < 18.5) classificacao = "Abaixo do peso";
+else if(imc < 25) classificacao = "Peso normal";
+else if(imc < 30) classificacao = "Sobrepeso";
+else classificacao = "Obesidade";
 
-    intervalo = setInterval(() => {
-        tempo++;
-        atualizarDisplay();
-    }, 1000);
-}
+let res = document.getElementById("resultado");
+res.innerText = `IMC: ${imc.toFixed(2)} - ${classificacao}`;
 
-function pausar() {
-    clearInterval(intervalo);
-    intervalo = null;
-}
-
-function resetar() {
-    pausar();
-    tempo = 0;
-    atualizarDisplay();
-    document.getElementById("voltas").innerHTML = "";
-}
-
-function volta() {
-    if (intervalo === null) return;
-
-    const li = document.createElement("li");
-    li.textContent = formatarTempo(tempo);
-    document.getElementById("voltas").appendChild(li);
+if(imc < 18.5) res.style.color = "blue";
+else if(imc < 25) res.style.color = "green";
+else if(imc < 30) res.style.color = "orange";
+else res.style.color = "red";
 }
