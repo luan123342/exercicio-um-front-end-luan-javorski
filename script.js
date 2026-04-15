@@ -1,4 +1,6 @@
-function mostrarMensagem() {
-  const nome = document.getElementById("patrick").innerText;
-  alert("Olá, " + patrick + "!");
+let contador = 0;
+
+function incrementar() {
+    contador++;
+    document.getElementById("contador").innerText = contador;
 }
