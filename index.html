@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
+    <title>Cronômetro com Voltas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Lista de Tarefas</h1>
-        <input type="text" id="tarefaInput" placeholder="Digite uma tarefa">
-        <button onclick="adicionarTarefa()">Adicionar</button>
-        <ul id="lista"></ul>
+        <h1>Cronômetro</h1>
+        <div id="display">00:00:00</div>
+
+        <div class="botoes">
+            <button onclick="iniciar()">Iniciar</button>
+            <button onclick="pausar()">Pausar</button>
+            <button onclick="resetar()">Reset</button>
+            <button onclick="volta()">Volta</button>
+        </div>
+
+        <ul id="voltas"></ul>
     </div>
 
     <script src="script.js"></script>
