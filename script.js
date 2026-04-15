@@ -1,6 +1,13 @@
-let contador = 0;
+function adicionarTarefa() {
+    const input = document.getElementById("tarefaInput");
+    const texto = input.value.trim();
 
-function incrementar() {
-    contador++;
-    document.getElementById("contador").innerText = contador;
+    if (texto === "") return;
+
+    const li = document.createElement("li");
+    li.textContent = texto;
+
+    document.getElementById("lista").appendChild(li);
+
+    input.value = "";
 }
